@@ -1,26 +1,54 @@
 ﻿"use strict"
 
 /**
-	Creation Date: 2020 Jan, 25
-	Last Modified: 2020 Jan, 26
+ * 
+ * Creation Date: 2020 Jan, 25
+ * Last Modified: 2020 Jan, 26
+ * 
+ *  Overview on Separation of Concerns:
+ * 		- [    implemented  ] Presentation layer
+ * 		- [    implemented  ] Logic & Data  layer
+ * 		- [No implementation] Input layer
+ * 		- [No implementation] Network layer
+ * 
+ * 	Our Proposal
+ * 	We've started this code to...
+ * 									...have fun
+ * 									...apply basic uses of JS Language on Canvas.
+ * 									...consolidate JS coding paradigmas
+ * 									...code remotely
+ * 									...test developing tools like console browser, VSCode, etc...
+ * 									...practice JSDoc documentation - see link reference below
+ * 									...practice English on a real envitonment
+ */
 
-	Programers: @RavenCodde, @ToniCalfim
-
-	Separation of Concerns:
-		- [ ] Presentation
-		- [ ] Logic & Data
-		- [X] Input
-		- [X] Network
-
-	Os links http://bit.ly/37mKmGC e http://bit.ly/2TX2R07 são referências de commandos canvas.
-
-	Our Proposal
-	We've started this code to...
-									...have fun
-									...apply basic uses of JS Language on Canvas.
-									...consolidate JS coding paradigmas
-									...code remotely
-									...test developing tools like console browser, VSCode, etc...
+ /** *************************************************************************************************************** */
+ /** 																												 */
+ /** *************************************************************************************************************** */
+ 
+/**
+ * @file OMG, it's full of stars...
+ * @fileoverview Check "Our Proposal" aforementioned
+ * @supported Tested on Chrome so far
+ * @version 1.0.0.0
+ * 
+ * @author Erivan "Raven Codde" Cerqueira <...@gmail.com>
+ * @author Toni Calfim <751127@gmail.com>
+ * 
+ * @see {@link JSDoc} for further information...
+ * @see {@link http://bit.ly/38fOjwE|JSDoc}
+ *
+ * @see {@link ConstLetVar} for further information...
+ * @see {@link http://bit.ly/38j2UaO|ConstLetVar}
+ *
+ * @see {@link Canvas Commands} for further information...
+ * @see {@link http://bit.ly/37mKmGC|Canvas Commands}
+ *
+ * @see {@link More Canvas Commands} for further information...
+ * @see {@link http://bit.ly/2TX2R07|More Canvas Commands}
+ *
+ * @todo Ellaborate on it
+ * @license Pode usar à vontade!
  */
 
 // Instancia canvas como referenciada no HTML que chama esse script
