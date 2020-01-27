@@ -1,11 +1,13 @@
-﻿/**
+﻿"use strict"
+
+/**
  * 
  * Creation Date: 2020 Jan, 25
  * Last Modified: 2020 Jan, 26
  * 
  *  Overview on Separation of Concerns:
- * 		- [    implemented  ] Presentation layer
- * 		- [    implemented  ] Logic & Data  layer
+ * 		- [   implemented   ] Presentation layer
+ * 		- [   implemented   ] Logic & Data  layer
  * 		- [No implementation] Input layer
  * 		- [No implementation] Network layer
  * 
@@ -16,8 +18,11 @@
  * 									...consolidate JS coding paradigmas
  * 									...code remotely
  * 									...test developing tools like console browser, VSCode, etc...
- * 									...practice JSDoc documentation - see link reference below
+ * 									...practice JSDoc documentation - SEE link reference below
  * 									...practice English on a real envitonment
+ *									...live pair code
+ *									...data structure
+ *
  */
 
  /** *************************************************************************************************************** */
@@ -52,8 +57,25 @@
 const STARS_DIAMETER = 2
 		
 const COLOR_PALLETE = [
-	'white', 'yellow', 'lightyellow', 'blue', 'lightblue',      'darkblue', 'red', 'darkred', 'orange', 'darkorange'
-	//'turquoise', 'purple', 'green',  'darkturquoise', 'lightgreen', 'darkgreen' , ,
+	'white',
+	'yellow',
+	'blue',
+	'red',
+	'orange',
+
+	'turquoise',
+	'purple',
+	'green',
+
+	'lightblue',	
+	'lightyellow',
+	'lightgreen',
+
+	'darkred',
+	'darkblue',
+	'darkorange',
+	'darkturquoise',
+	'darkgreen'
 ]
 
 // Instancia canvas como referenciada no HTML que chama esse script
@@ -72,8 +94,8 @@ function getRandomNumber(min, max) {
 
 const createStarObject =  () => {
     
-    let positionX = getRandomNumber(0, 650);
-    let positionY = getRandomNumber(0,125);
+    let positionX = getRandomNumber(2, 650);
+    let positionY = getRandomNumber(3,125);
 	let diameter  = STARS_DIAMETER;
 	
 	let pulsing  = 0;
@@ -101,17 +123,17 @@ const createStarObject =  () => {
     }
 }
 
-for ( let i = 0; i < 25; i++ ) {
+for ( let i = 0; i < 75; i++ ) {
 	const newStar = 'star' + i;
 	starsData.stars[newStar] = createStarObject();
 }	
 
 function update() {
-		
+
 	const stars = starsData.stars;
 
 	for ( const starID in stars ) {
-			
+
 		const currentStar = stars[starID];			
 		const currentTimeToFall = currentStar.timeToFall;
 
@@ -149,7 +171,6 @@ function drawStars() {
 		context2D.closePath()
 
 	}
-
 }
 
 function animateLoop(){
