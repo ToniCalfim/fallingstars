@@ -1,0 +1,24 @@
+{
+  "name": "fallingstars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToniCalfim/fallingstars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToniCalfim/fallingstars/issues"
+  },
+  "homepage": "https://github.com/ToniCalfim/fallingstars#readme",
+  "dependencies": {
+    "jest": "^25.1.0",
+    "yearn": "^2.3.1"
+  }
+}
