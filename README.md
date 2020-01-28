@@ -3,8 +3,7 @@ OMG, it's full of stars!
 
 
 ## The Animation
-Conception and more... Two coder friends, always in love with programming in all of its flavors, got to study JavaScript on CANVAS; thought about creating an easy and ready to go program. This animation was the very first idea they got.
-(**To be continued**...)
+Conception and more... Two coder friends, always in love with programming in all of its flavors, got to study JavaScript on CANVAS; thought about creating an easy and ready to go program. This animation was the very first idea they got. **To be continued**... now if you are looking for an imaginative scenario, please refer to [The Imaginative Render on Falling Stars](https://github.com/ToniCalfim/fallingstars/blob/master/Documents/ImaginativeRender.md), and get to know immagination is the best render ever!
 
 
 ## Respect
@@ -12,7 +11,7 @@ We respect everybody. We don't take for granted that you should know something p
 
 
 ## Issues
-Please post bugs in the correct repository: [https://github.com/ToniCalfim/fallingstars/issues](https://github.com/ToniCalfim/fallingstars/issues)
+Please post bugs in the correct [Issues](https://github.com/ToniCalfim/fallingstars/issues) repository.
 
 
 ## Get Involved
