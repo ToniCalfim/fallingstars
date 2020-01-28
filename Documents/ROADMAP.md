@@ -4,7 +4,7 @@ General information on Falling Stars Animation.
 
 
 ## Coding Rules
-We faithfully try to follow some guidelines while coding; please refer to [Documents/CodingRules.md](Documents/CodingRules.md)
+We faithfully try to follow some guidelines while coding; please refer to [https://github.com/ToniCalfim/fallingstars/blob/master/Documents/CodingRules.md](https://github.com/ToniCalfim/fallingstars/blob/master/Documents/CodingRules.md)
 
 
 ## Project mission and summary
@@ -20,7 +20,7 @@ This project has been started so we, and all the people, could...
 + ...practice English - in case this is not your mother language - on a real environment
 + ...apply basic uses of JS Language on Canvas.
 + ...test developing tools like browser consoles, VSCode, etc...
-+ ...practice JSDoc documentation [http://bit.ly/38fOjwE|JSDoc](http://bit.ly/38fOjwE|JSDoc)
++ ...practice JSDoc documentation [http://bit.ly/38fOjwE](http://bit.ly/38fOjwE)
 
 
 ## How to get involved
