@@ -23,9 +23,11 @@ You are kindly invited to take part as you can...
 
 
 ## Timeline
+(Session not implemented)
 
 
 ## New Features
+(Session not implemented)
 
 
 ## Issues
@@ -37,3 +39,4 @@ No bugs found so far...
 
 
 ## Etc...
+(Session not implemented)
