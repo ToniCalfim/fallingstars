@@ -10,14 +10,14 @@ Before opening the front door house, one of the inhabitants saw a happy little c
 
 “It’s so beautiful!” - the man uttered. The child agreeds, and says “Every night I come outside to talk to my friends, they fall every night, the whole night long; but the ones which fall in this city get so sad that they die, because they cannot do the magic.”
 
-“What do you mean, my son? Are these magic stars?” - the man asked. The boy agreeds, and says “They are lovely stars, and each color represents a kind of love. Reds are passion, they generate mariages; whites are hope, they generate peace; yellows are friendship, they generate real friends; and there are so many others! - but because nobody pays attention to them, they cannot reach our hearts, and they get sad, and they die.”
+“What do you mean, my son? Are these magic stars?” - the man asked. The child agreeds, and says “They are lovely stars, and each color represents a kind of love. Reds are passion, they generate mariages; whites are hope, they generate peace; yellows are friendship, they generate real friends; and there are so many others! - but because nobody pays attention to them, they cannot reach our hearts, and they get sad, and they die.”
 
 # OMG, it's Full of Stars
-While the man listens to the boy’s words, a yellow star comes in their direction, shines zestfully, engulfs two inhabitants, transmitting its energy to them.
+While the man listens to the child’s words, a yellow star comes in their direction, shines zestfully, engulfs two inhabitants, transmitting its energy to them.
 
 The man is now very emotive, he looks around and sees so many colorful stars falling from the skies; they are in different dimentions, they fall in different velocities and directions, shinning so bright, and blinking in different intermittences, touching people and changing their lives.
 
-The boy now says that he had never seen so many falling stars. Now it's as if they were using that special occasion to fulfil the hearts of men.
+The child now says that he had never seen so many falling stars. Now it's as if they were using that special occasion to fulfil the hearts of men.
 
 # The Change Brings Felicitopolis
 From this day on, everything changed in the city for better and for good. The impact was so huge, that they changed the name of the city to Felicitopolis... People started to enjoy life, many friendships and marriages took place. Happiness were all around...
