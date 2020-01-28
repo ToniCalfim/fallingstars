@@ -12,9 +12,7 @@ We respect everybody. We don't take for granted that you should know something p
 
 
 ## Issues
-Please post bugs in the correct repository:
-
-* FallingStars general and FalingStars.dom: [https://github.com/ToniCalfim/fallingstars/issues](https://github.com/ToniCalfim/fallingstars/issues)
+Please post bugs in the correct repository: [https://github.com/ToniCalfim/fallingstars/issues](https://github.com/ToniCalfim/fallingstars/issues)
 
 
 ## Get Involved
