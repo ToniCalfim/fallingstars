@@ -4,7 +4,7 @@ OMG, it's full of stars!
 
 ## The Animation
 Conception and more... Two coder friends, always in love with programming in all of its flavors, got to study JavaScript on CANVAS; thought about creating an easy and ready to go program. This animation was the very first idea they got.
-(*To be continued*...)
+(**To be continued**...)
 
 
 ## Respect
