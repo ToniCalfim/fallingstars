@@ -23,15 +23,15 @@ You are kindly invited to take part as you can...
 
 
 ## Timeline
-(Session not implemented)
+(*Session not implemented*)
 
 
 ## New Features
-(Session not implemented)
+(*Session not implemented*)
 
 
 ## Issues
-Please, refer to the issues tab for latest issues... 
+Please, refer to the **Issues** tab for latest issues... 
 
 
 ## Bug Fixing
@@ -39,4 +39,4 @@ No bugs found so far...
 
 
 ## Etc...
-(Session not implemented)
+(*Session not implemented*)
