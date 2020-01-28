@@ -8,7 +8,7 @@ Conception and more... Two coder friends, always in love with programming in all
 
 
 ## Respect
-We respect everybody. We don't take for granted that you should know something previously, so feel free to ask questions about things you didn't understand, for this is also a great contribution to make us review our code and conceptions.
+We respect everybody. We don't take for granted that you should know something previously, so feel free to ask questions about things you didn't understand, for this is also a great contribution which will surelly make us review our code and conceptions.
 
 
 ## Issues
