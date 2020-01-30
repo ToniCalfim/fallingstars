@@ -24,4 +24,7 @@ From this day on, everything changed in the city for better and for good. The im
 
 And you, in which city would you rather live?
 
-What are you waiting for?
+What are you waiting for? It depends only on you!
+
+---
+Text conception by Mércio Proveti [Mércio Proveti](mercio.proveti@icloud.com).

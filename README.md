@@ -21,4 +21,7 @@ Developers, please check out the [Roadmap](https://github.com/ToniCalfim/falling
 
 
 ## Contributors
-We DO recognize all types of contributions. This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Instructions to add yourself or add contribution emojis to your name are to come...
+We DO recognize all types of contributions, and so the authors of this project would like - in alphabetic order - to thank:
+
+- Cristiane Miranda, for noticing stars would only fall to the left.
+- Mércio Proveti (mercio.proveti@icloud.com), for [rendering this animation on our minds](https://github.com/ToniCalfim/fallingstars/blob/master/Documents/ImaginativeRender.md).
