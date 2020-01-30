@@ -48,28 +48,40 @@ const canvas = document.getElementById( "canvas" )
 const context2D = canvas.getContext( "2d" )
 
 /** *************************************** */
+/**                                         */
 /** ***** Beginning of the Data Layer ***** */
+/**                                         */
+/**                                         */
+/** *************************************** */
 const COLOR_PALLETE = [
-	// New colors may apply
-	'white',
-	'yellow',
-	'blue',
-	'red',
-	'orange',
+	//
+	// New suitable colors may apply	
+	//
+
+	//'white', // White collor will be used for the blinking property
+
+	'lightyellow',
+	//'yellow',			// This color won't do
+	
+	//'lightblue',		// This color won't do
+	//'blue',
+	'darkblue',
+
+	//'red',			// This color won't do
+	//'darkred',
+
+	//'orange',			// This color won't do
+	//'darkorange',		// This color won't do
 
 	'turquoise',
-	'purple',
-	'green',
-
-	'lightblue',	
-	'lightyellow',
-	'lightgreen',
-
-	'darkred',
-	'darkblue',
-	'darkorange',
 	'darkturquoise',
+
+	'purple',
+
+	//'lightgreen',		// This color won't do
+	'green',
 	'darkgreen',
+
 ]
 
 function getRandomNumber( min, max ) {
@@ -114,8 +126,8 @@ const createStarObject = () => {
 	 * 
 	 * All —(maybe?!)— the attributes are going to be recalculated by the function update()
 	 */
-    let positionX = getRandomNumber( 2, context2D.canvas.width )
-    let positionY = getRandomNumber( 3, 125 )
+    let positionX = getRandomNumber( 2, context2D.canvas.width )	
+    let positionY = getRandomNumber( 3, 325 ) // The second parameter causes stars dispers more over canvas
 	let diameter = 1.25;
 
     let color = COLOR_PALLETE[getRandomNumber( 0, COLOR_PALLETE.length )]
@@ -123,7 +135,7 @@ const createStarObject = () => {
 	let pulsing = 0
     let blinking = 0
 
-	let timeToFall = getRandomNumber( 0, 7500 ) // See wait = http://bit.ly/2TXHvjy
+	let timeToFall = getRandomNumber( 0, 12500 ) // See wait = http://bit.ly/2TXHvjy
 
 	/**
 	 * 
@@ -138,8 +150,8 @@ const createStarObject = () => {
 	 * numbers are very high, objects may start to flick.
 	 * 
 	 */
-	let velocityToFall = getRandomNumber( 2, 4 )	// Changes the Y axis
-	let angleToFall = getRandomNumber( -7, 7 )  	// Changes the X axis
+	let velocityToFall = getRandomNumber( 4, 5 )	// Changes the Y axis
+	let angleToFall = getRandomNumber( -9, 9 )  	// Changes the X axis
 
     return {
 
@@ -175,7 +187,11 @@ for ( let i = 0; i < 175; i++ ) {
 }	
 
 /** **************************************** */
+/**                                          */
 /** ***** Beginning of the Logic Layer ***** */
+/**                                          */
+/**                                          */
+/** **************************************** */
 function update() {
 	
 	context2D.clearRect( 0, 0, context2D.canvas.width, context2D.canvas.height ) // Clear canvas
@@ -210,12 +226,30 @@ function update() {
 	}
 }
 
+/** *********************************************** */
+/**                                                 */
+/** ***** Beginning of the Presentation Layer ***** */
+/**                                                 */
+/**                                                 */
+/** *********************************************** */
 function drawSky() {
 	
+	
+	
+	/**
+	 *
+	 * We can have both linear and radial gradients,
+	 * see link https://www.w3schools.com/graphics/canvas_gradients.asp	 * 
+	 *
+	 */ 
+	
+	                 // createLinearGradient( startinX, startingY, endingX, endingY );
 	var grd = context2D.createLinearGradient( 250, 25, 250, 2500 );
 
 	grd.addColorStop( 0, "black" );
-	grd.addColorStop( 1, "red" );
+	grd.addColorStop( .5 ,"red" );	
+	grd.addColorStop( 1, "black" );
+
 	context2D.fillStyle = grd;
 	context2D.fillRect(0, 0, context2D.canvas.width, context2D.canvas.height);
 
@@ -223,13 +257,12 @@ function drawSky() {
 
 function drawCity() {
 
+	/** Element "city" was declared on the HTML file */
 	var img = document.getElementById( "city" );
 	context2D.drawImage( img, -7, 285 );
 
 }
 
-/** *********************************************** */
-/** ***** Beginning of the Presentation Layer ***** */
 function drawStars() {
 
 	const stars = starsData.stars
