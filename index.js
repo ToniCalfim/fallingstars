@@ -3,7 +3,7 @@
 /**
  * 
  * Creation Date: 2020 Jan, 25
- * Last Modified: 2020 Jan, 26
+ * Last Modified: 2020 Jan, 30
  *
  *
  *  Overview on Separation of Concerns for this project:
@@ -114,7 +114,7 @@ const createStarObject = () => {
 	 * 
 	 * All —(maybe?!)— the attributes are going to be recalculated by the function update()
 	 */
-    let positionX = getRandomNumber( 2, 650 )
+    let positionX = getRandomNumber( 2, context2D.canvas.width )
     let positionY = getRandomNumber( 3, 125 )
 	let diameter = 1.25;
 
@@ -138,7 +138,7 @@ const createStarObject = () => {
 	 * numbers are very high, objects may start to flick.
 	 * 
 	 */
-	let velocityToFall = getRandomNumber( 0, 4 )	// Changes the Y axis
+	let velocityToFall = getRandomNumber( 2, 4 )	// Changes the Y axis
 	let angleToFall = getRandomNumber( -7, 7 )  	// Changes the X axis
 
     return {
@@ -177,6 +177,8 @@ for ( let i = 0; i < 175; i++ ) {
 /** **************************************** */
 /** ***** Beginning of the Logic Layer ***** */
 function update() {
+	
+	context2D.clearRect( 0, 0, context2D.canvas.width, context2D.canvas.height ) // Clear canvas
 
 	/** This const "stars" gives us easy access to the population of stars inside starsData */
 	const stars = starsData.stars
@@ -208,11 +210,27 @@ function update() {
 	}
 }
 
+function drawSky() {
+	
+	var grd = context2D.createLinearGradient( 250, 25, 250, 2500 );
+
+	grd.addColorStop( 0, "black" );
+	grd.addColorStop( 1, "red" );
+	context2D.fillStyle = grd;
+	context2D.fillRect(0, 0, context2D.canvas.width, context2D.canvas.height);
+
+}
+
+function drawCity() {
+
+	var img = document.getElementById( "city" );
+	context2D.drawImage( img, -7, 285 );
+
+}
+
 /** *********************************************** */
 /** ***** Beginning of the Presentation Layer ***** */
 function drawStars() {
-
-	context2D.clearRect( 0, 0, context2D.canvas.width, context2D.canvas.height ) // Clear canvas
 
 	const stars = starsData.stars
 
@@ -232,9 +250,15 @@ function drawStars() {
 function animateLoop() {
 
 	update()
+
+	drawSky()
+
 	drawStars()
+
+	drawCity()
+
 	requestAnimationFrame( animateLoop )
 
 }
-
+	
 animateLoop()
