@@ -1,9 +1,9 @@
 "use strict"
 
 /**
- * 
+ *
  * Creation Date: 2020 Jan, 25
- * Last Modified: 2020 Jan, 30
+ * Last Modified: 2020 Fev, 03
  *
  *
  *  Overview on Separation of Concerns for this project:
@@ -22,10 +22,10 @@
  * @fileoverview OMG, it's full of stars...
  * @supported Tested on Chrome so far
  * @version 1.0.0.0 standing for major.minor.revision.x
- * 
+ *
  * @author Erivan "Raven Codde" Cerqueira <soulidbrasil@gmail.com>
  * @author Toni Calfim <751127@gmail.com>
- * 
+ *
  * @see {@link JSDoc} for further information...
  * @see {@link http://bit.ly/38fOjwE|JSDoc}
  *
@@ -38,31 +38,36 @@
  * @see {@link More Canvas Commands} for further information...
  * @see {@link http://bit.ly/2TX2R07|More Canvas Commands}
  *
+ * @see {@link Edit hacks on VS Code} for further information...
+ * @see {@link http://bit.ly/2Sf5AQj|Edit hacks on VS Code}
+ *
  * @todo Ellaborate on it
  * @license Use it as you will!
- * 
+ *
  */
 
 /** Current canvas instance as a reference to the canvas on the HTML file that calls this script */
 const canvas = document.getElementById( "canvas" )
 const context2D = canvas.getContext( "2d" )
 
-/** *************************************** */
-/**                                         */
-/** ***** Beginning of the Data Layer ***** */
-/**                                         */
-/**                                         */
-/** *************************************** */
+/** ******************************************************************************** */
+/**                                          										 */
+/** ************************* Beginning of the Data Layer ************************** */
+/**                                          										 */
+/**                                          										 */
+/** ******************************************************************************** */
+const MAX_TIME_TO_FALL = 22500
+const MAX_NUMBER_OF_STARS = 250
 const COLOR_PALLETE = [
 	//
 	// New suitable colors may apply: https://www.w3schools.com/colors/colors_names.asp
 	//
 
-	//'white', // White collor will be used for the blinking property
+	'white',
 
 	'lightyellow',
 	//'yellow',			// This color won't do
-	
+
 	//'lightblue',		// This color won't do
 	//'blue',
 	'darkblue',
@@ -84,12 +89,12 @@ const COLOR_PALLETE = [
 
 ]
 
-function getRandomNumber( min, max ) {
+function getRandomIntNumber( min, max ) {
 	/**
-	 * 
+	 *
 	 * @see {@link More Randomizing Functions} for further information...
 	 * @see {@link https://mzl.la/2GAjNli|More Randomizing Functions}
-	 * 
+	 *
 	 */
 
 	min = Math.ceil( min );
@@ -101,7 +106,7 @@ function getRandomNumber( min, max ) {
 
 const cradleOfStars = {
 	/**
-	 * 
+	 *
 	 * Here we have the cradle of stars, where all the stars are allocated in.
 	 * All stars created by the function createStars() are going to be moved here.
 	 * Both functions cradleOfStars, createStars, plus the forthcoming FOR work together.
@@ -111,58 +116,59 @@ const cradleOfStars = {
 	 * Structuraly we have an object inside another object. In JavaScript, "chaves" represents
 	 * an object. Here "cradleOfStars" is an object, and "star" is another object. And then you can
 	 * access the attributes as if objects were hashtables.
-	 * 
-	*/
+	 *
+	 */
 	stars: {
 		/**
-		 * 
+		 *
 		 * All stars created by the function createStars() go here...
-		 * 
+		 *
 		 */
 	}
 }
 
+// function createStars() { return {} }
+// hoisting = chamar uma função antes de ela ser declara
 const createStars = () => {
 	/**
-	 * 
-	 * This is a Factory Function, it returns already instanced objects.
-	 * 
+	 *
+	 * This is a Factory Function.
+	 *
+	 * All the next modifications on the attributes MUST be implemented by function update().
+	 *
 	 * Here all the **ATTRIBUTES** of the objects are declared, instanced, first calculated, and returned
-	 * 
+	 *
 	 * New attributes must be declared firstly here.
-	 * 
+	 *
 	 * All —(maybe?!)— the attributes are going to be recalculated by the function update()
-	 * 
+	 *
 	 */
-	let positionX = getRandomNumber( 2, context2D.canvas.width )	
-	
-	/** Stars are born in these coordinates area. The second parameter causes stars disperses more over canvas */
-	let positionY = getRandomNumber( 3, 325 )
+	let positionX = getRandomIntNumber( 2, context2D.canvas.width )
 
-	let diameter = 1.25;
+	/** Stars are born in the following coordinates area. The second parameter causes stars disperses more over canvas */
+	let positionY = getRandomIntNumber( 3, 325 )
 
-    let color = COLOR_PALLETE[getRandomNumber( 0, COLOR_PALLETE.length )]
+	let diameter = Math.random();
 
-	let pulsing = 0
-    let blinking = 0
+    let color = COLOR_PALLETE[getRandomIntNumber( 0, COLOR_PALLETE.length - 1 )]
 
-	let timeToFall = getRandomNumber( 0, 12500 ) // See wait = http://bit.ly/2TXHvjy
+	let timeToFall = getRandomIntNumber( 0, MAX_TIME_TO_FALL ) // See wait = http://bit.ly/2TXHvjy
 
 	/**
-	 * 
+	 *
 	 * Both forthcoming attributes velocityToFall and angleToFall add in favor of velocity.
-	 * 
+	 *
 	 * So said, the attribute velocityToFall must be always >= zero or
 	 * objects won't go down, but will go up.
-	 * 
+	 *
 	 * And the attribute angleToFall says about the inclination objects will fall.
-	 * 
+	 *
 	 * In short, the bigger the numbers, the faster objects will fall; but if the
 	 * numbers are very high, objects may start to flick.
-	 * 
+	 *
 	 */
-	let velocityToFall = getRandomNumber( 4, 5 )	// Changes the Y axis
-	let angleToFall = getRandomNumber( -9, 9 )  	// Changes the X axis
+	let velocityToFall = getRandomIntNumber( 4, 5 )	// Changes the Y axis
+	let angleToFall = getRandomIntNumber( -9, 9 )  	// Changes the X axis
 
     return {
 
@@ -172,9 +178,6 @@ const createStars = () => {
 		diameter,
 		color,
 
-		pulsing,
-		blinking,
-
 		timeToFall,
 		angleToFall,
 		velocityToFall,
@@ -182,29 +185,29 @@ const createStars = () => {
     }
 }
 
-for ( let numberOfStars = 0; numberOfStars < 175; numberOfStars++ ) {
+for ( let numberOfStars = 0; numberOfStars < MAX_NUMBER_OF_STARS; numberOfStars++ ) {
 	/**
-	 * 
-	 * This FOR populates the Cradle of Stars on function cradleOfStars with a 
+	 *
+	 * This FOR populates the Cradle of Stars on function cradleOfStars with a
 	 * sequentialy named object and their respective aleatory values
 	 * for the attributes.
-	 * 
+	 *
 	 */
 
 	const newStar = 'star' + numberOfStars
 
 	cradleOfStars.stars[newStar] = createStars()
 
-}	
+}
 
-/** **************************************** */
-/**                                          */
-/** ***** Beginning of the Logic Layer ***** */
-/**                                          */
-/**                                          */
-/** **************************************** */
+/** ******************************************************************************** */
+/**                                          										 */
+/** ************************* Beginning of the Logic Layer ************************* */
+/**                                          										 */
+/**                                          										 */
+/** ******************************************************************************** */
 function update() {
-	
+
 	context2D.clearRect( 0, 0, context2D.canvas.width, context2D.canvas.height ) // Clear canvas
 
 	/** This const "stars" gives us easy access to the population of stars inside cradleOfStars */
@@ -217,13 +220,33 @@ function update() {
 
 		const currentTimeToFall = currentStar.timeToFall
 
-		if ( currentTimeToFall != 0 ) {
+		if ( currentTimeToFall >= 0 ) {
 
 			currentStar.timeToFall = currentTimeToFall - 1
 
 		}
 
 		else {
+
+			/**
+			 * 
+			 * Here is the rebirth of stars; here we treat what happens whenever the stars fall out of the canvas.
+			 * 
+			 */
+			if ( currentStar.x <= 0 || currentStar.x >= context2D.canvas.width || currentStar.y >= context2D.canvas.height ) {
+				
+				
+				currentStar.x = getRandomIntNumber( 2, context2D.canvas.width )
+				currentStar.y = getRandomIntNumber( 3, 325 )
+				currentStar.color = COLOR_PALLETE[getRandomIntNumber( 0, COLOR_PALLETE.length - 1 )]
+				currentStar.timeToFall = getRandomIntNumber( 0, MAX_TIME_TO_FALL ) // See wait = http://bit.ly/2TXHvjy
+				currentStar.velocityToFall = getRandomIntNumber( 4, 5 )	// Changes the Y axis
+				currentStar.angleToFall = getRandomIntNumber( -9, 9 )  	// Changes the X axis
+
+				if (currentStar.diameter <= 1.25) { currentStar.diameter = currentStar.diameter + 0.1 }
+				else { currentStar.diameter = Math.random() }
+
+			}
 
 			const currentVelocityToFall	= currentStar.velocityToFall
 			const currentAngleToFall = currentStar.angleToFall
@@ -232,18 +255,23 @@ function update() {
 			const currentPositionY = currentStar.y
 
 			currentStar.x = currentPositionX + 1 * currentAngleToFall
-			currentStar.y = currentPositionY + currentVelocityToFall
+			currentStar.y = currentPositionY + currentVelocityToFall	
 
 		}
 	}
+	
+	drawSky()
+	drawStars()
+	drawCity()
+
 }
 
-/** *********************************************** */
-/**                                                 */
-/** ***** Beginning of the Presentation Layer ***** */
-/**                                                 */
-/**                                                 */
-/** *********************************************** */
+/** ******************************************************************************** */
+/**                                          										 */
+/** ********************* Beginning of the Presentation Layer ********************** */
+/**                                          										 */
+/**                                          										 */
+/** ******************************************************************************** */
 function drawSky() {
 
 	/**
@@ -252,13 +280,12 @@ function drawSky() {
 	 * see link https://www.w3schools.com/graphics/canvas_gradients.asp
 	 *
 	 */
-
 	                 // createLinearGradient( startinX, startingY, endingX, endingY );
 	var gradient = context2D.createLinearGradient( 250, 0, 250, 500 );
 
 	/** Values here range from 0 to 1 */
-	gradient.addColorStop( .25, "black" );
-	gradient.addColorStop( .60 ,"DarkSlateGray" );
+	gradient.addColorStop( .20, "black" );
+	gradient.addColorStop( .65 ,"DarkSlateGray" );
 	gradient.addColorStop( .95, "lightgray" );
 
 	context2D.fillStyle = gradient;
@@ -297,14 +324,8 @@ function animateLoop() {
 
 	update()
 
-	drawSky()
-
-	drawStars()
-
-	drawCity()
-
 	requestAnimationFrame( animateLoop )
 
 }
-	
+
 animateLoop()
