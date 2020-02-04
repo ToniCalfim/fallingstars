@@ -3,7 +3,7 @@
 /**
  *
  * Creation Date: 2020 Jan, 25
- * Last Modified: 2020 Fev, 03 : This program now is finalized. Programmers are satisfied with the result!
+ * Last Modified: 2020 Fev, 03 : This project is finalized. Programmers are satisfied with the result!
  *
  *
  *  Overview on Separation of Concerns for this project:
