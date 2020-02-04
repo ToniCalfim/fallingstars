@@ -3,7 +3,7 @@
 /**
  *
  * Creation Date: 2020 Jan, 25
- * Last Modified: 2020 Fev, 03
+ * Last Modified: 2020 Fev, 03 : This program now is finalized. Programmers are satisfied with the result!
  *
  *
  *  Overview on Separation of Concerns for this project:
@@ -51,12 +51,10 @@ const canvas = document.getElementById( "canvas" )
 const context2D = canvas.getContext( "2d" )
 
 /** ******************************************************************************** */
-/**                                          										 */
 /** ************************* Beginning of the Data Layer ************************** */
 /**                                          										 */
-/**                                          										 */
 /** ******************************************************************************** */
-const MAX_TIME_TO_FALL = 22500
+const MAX_TIME_TO_FALL = 15000
 const MAX_NUMBER_OF_STARS = 250
 const COLOR_PALLETE = [
 	//
@@ -143,16 +141,24 @@ const createStars = () => {
 	 * All —(maybe?!)— the attributes are going to be recalculated by the function update()
 	 *
 	 */
-	let positionX = getRandomIntNumber( 2, context2D.canvas.width )
 
-	/** Stars are born in the following coordinates area. The second parameter causes stars disperses more over canvas */
+	/**
+	 *
+	 * Stars are born in the following X and Y coordinates area.
+	 *
+	 * Here positionX are -1 to cause stars to be born outside canvas.
+	 *
+	 * The second positionY parameter limits the botton area for stars to appear.
+	 *
+	 */
+	let positionX = getRandomIntNumber( -1, -1 )
 	let positionY = getRandomIntNumber( 3, 325 )
 
 	let diameter = Math.random();
 
     let color = COLOR_PALLETE[getRandomIntNumber( 0, COLOR_PALLETE.length - 1 )]
 
-	let timeToFall = getRandomIntNumber( 0, MAX_TIME_TO_FALL ) // See wait = http://bit.ly/2TXHvjy
+	let timeToFall = getRandomIntNumber( 0, MAX_TIME_TO_FALL / 15 )
 
 	/**
 	 *
@@ -201,9 +207,7 @@ for ( let numberOfStars = 0; numberOfStars < MAX_NUMBER_OF_STARS; numberOfStars+
 }
 
 /** ******************************************************************************** */
-/**                                          										 */
 /** ************************* Beginning of the Logic Layer ************************* */
-/**                                          										 */
 /**                                          										 */
 /** ******************************************************************************** */
 function update() {
@@ -229,13 +233,13 @@ function update() {
 		else {
 
 			/**
-			 * 
-			 * Here is the rebirth of stars; here we treat what happens whenever the stars fall out of the canvas.
-			 * 
+			 *
+			 * Here is the rebirth of stars; here we treat what happens whenever each star falls out of the canvas.
+			 *
 			 */
 			if ( currentStar.x <= 0 || currentStar.x >= context2D.canvas.width || currentStar.y >= context2D.canvas.height ) {
-				
-				
+
+
 				currentStar.x = getRandomIntNumber( 2, context2D.canvas.width )
 				currentStar.y = getRandomIntNumber( 3, 325 )
 				currentStar.color = COLOR_PALLETE[getRandomIntNumber( 0, COLOR_PALLETE.length - 1 )]
@@ -243,7 +247,13 @@ function update() {
 				currentStar.velocityToFall = getRandomIntNumber( 4, 5 )	// Changes the Y axis
 				currentStar.angleToFall = getRandomIntNumber( -9, 9 )  	// Changes the X axis
 
-				if (currentStar.diameter <= 1.25) { currentStar.diameter = currentStar.diameter + 0.1 }
+				/**
+				 *
+				 * If a star didn't reach its max diameter yet, it's incremented; and if it
+				 * reaches its max diameter, then is is randomically redefined.
+				 *
+				 */
+				if (currentStar.diameter <= 1.25) { currentStar.diameter = currentStar.diameter + 0.05 }
 				else { currentStar.diameter = Math.random() }
 
 			}
@@ -255,11 +265,11 @@ function update() {
 			const currentPositionY = currentStar.y
 
 			currentStar.x = currentPositionX + 1 * currentAngleToFall
-			currentStar.y = currentPositionY + currentVelocityToFall	
+			currentStar.y = currentPositionY + currentVelocityToFall
 
 		}
 	}
-	
+
 	drawSky()
 	drawStars()
 	drawCity()
@@ -267,9 +277,7 @@ function update() {
 }
 
 /** ******************************************************************************** */
-/**                                          										 */
 /** ********************* Beginning of the Presentation Layer ********************** */
-/**                                          										 */
 /**                                          										 */
 /** ******************************************************************************** */
 function drawSky() {
@@ -281,14 +289,14 @@ function drawSky() {
 	 *
 	 */
 	                 // createLinearGradient( startinX, startingY, endingX, endingY );
-	var gradient = context2D.createLinearGradient( 250, 0, 250, 500 );
+	var gradientSky = context2D.createLinearGradient( 250, 0, 250, context2D.canvas.height );
 
 	/** Values here range from 0 to 1 */
-	gradient.addColorStop( .20, "black" );
-	gradient.addColorStop( .65 ,"DarkSlateGray" );
-	gradient.addColorStop( .95, "lightgray" );
+	gradientSky.addColorStop( .20, "black" );
+	gradientSky.addColorStop( .70 ,"DarkSlateGray" );
+	gradientSky.addColorStop( .95, "lightgray" );
 
-	context2D.fillStyle = gradient;
+	context2D.fillStyle = gradientSky;
 	context2D.fillRect(0, 0, context2D.canvas.width, context2D.canvas.height);
 
 }
@@ -297,7 +305,12 @@ function drawCity() {
 
 	/** Element "city" was previously declared on the HTML file */
 	var image = document.getElementById( "city" );
-	context2D.drawImage( image, -7, 285 );
+	context2D.drawImage( image, -150, 285 );
+	context2D.drawImage( image, 0, 285 );
+	context2D.drawImage( image, 200, 285 );
+	context2D.drawImage( image, 450, 285 );
+	context2D.drawImage( image, 750, 285 );
+	context2D.drawImage( image, 1100, 285 );
 
 }
 
